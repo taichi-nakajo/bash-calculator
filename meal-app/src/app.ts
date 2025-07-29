@@ -20,20 +20,20 @@ app.use('/api', mealRoutes);
 
 // ヘルスチェックエンドポイント
 app.get('/health', (req, res) => {
-  res.json({ 
-    status: 'OK', 
-    timestamp: new Date().toISOString(),
-    service: 'meal-management-api'
-  });
+    res.json({
+        status: 'OK',
+        timestamp: new Date().toISOString(),
+        service: 'meal-management-api'
+    });
 });
 
 // 404エラーハンドリング
 app.use('*', (req, res) => {
-  res.status(404).json({
-    success: false,
-    error: 'Endpoint not found',
-    message: `Route ${req.originalUrl} not found`
-  });
+    res.status(404).json({
+        success: false,
+        error: 'Endpoint not found',
+        message: `Route ${req.originalUrl} not found`
+    });
 });
 
 // エラーハンドリングミドルウェア
@@ -41,9 +41,9 @@ app.use(errorHandler);
 
 // サーバー起動
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-  console.log(`📱 Health check: http://localhost:${PORT}/health`);
-  console.log(`🍽️ API endpoints: http://localhost:${PORT}/api`);
+    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`📱 Health check: http://localhost:${PORT}/health`);
+    console.log(`🍽️ API endpoints: http://localhost:${PORT}/api`);
 });
 
 export default app;
