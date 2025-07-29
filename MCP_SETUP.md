@@ -14,10 +14,13 @@
 
 ## 2. 環境変数の設定
 
-`.env` ファイルを編集して、実際のトークンを設定：
+`.env.template` ファイルを `.env` にコピーして、実際のトークンを設定：
 
 ```bash
-# .env ファイル内
+# .env.template を .env にコピー
+cp .env.template .env
+
+# .env ファイルを編集して実際のトークンを設定
 GITHUB_PAT=ghp_your_actual_token_here
 ```
 
